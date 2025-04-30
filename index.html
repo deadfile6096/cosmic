@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="netlify" content="spa">
+    <title>Cosmic MCP - AI Gaming Universe</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/cosmictranspe.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="stars">
+        <!-- Stars will be created dynamically by JS -->
+    </div>
+    <div class="cosmic-grid"></div>
+    <div class="galaxy-swirl"></div>
+    <div class="nebula-glow"></div>
+    <div class="cosmic-dust"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/cosmictranspe.png" alt="Cosmic MCP Logo" class="logo-img">
+            <span class="logo-text">COSMIC MCP</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-btn tooltip" data-tooltip="Game Dashboard">
+                <i class="fas fa-gamepad"></i> Game
+            </a>
+            <a class="nav-btn tooltip" data-tooltip="Documentation" href="/docs">
+                <i class="fas fa-book"></i> Docs
+            </a>
+        </div>
+        <div class="social-links">
+            <a href="https://t.me/cosmicmcp" target="_blank" class="social-btn tooltip" data-tooltip="Join our Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://x.com/Cosmicmcp" target="_blank" class="social-btn tooltip" data-tooltip="Follow us on X">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/CosmicMCPv1/CosmicMCP" target="_blank" class="social-btn tooltip" data-tooltip="Check our GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="wallet-section">
+            <div class="nebula-balance" id="nebulaBalance">0 $NEBULA</div>
+            <button id="depositNebula" class="wallet-btn text-white font-semibold">
+                <i class="fas fa-plus-circle"></i> Deposit
+            </button>
+            <button id="withdrawNebula" class="wallet-btn text-white font-semibold">
+                <i class="fas fa-minus-circle"></i> Withdraw
+            </button>
+            <button id="connectWallet" class="wallet-btn text-white font-semibold">
+                <i class="fas fa-wallet"></i> Connect Phantom
+            </button>
+            <button id="customizeAgent" class="wallet-btn text-white font-semibold">
+                <i class="fas fa-user-astronaut"></i> Customize
+            </button>
+        </div>
+    </header>
+
+    <!-- Game dashboard -->
+    <div class="game-container">
+        <!-- Game Center -->
+        <div class="game-center">
+            <div class="planetary-map" id="planetaryMap">
+                <div class="planet aetherion" onclick="moveAgent('Aetherion')">
+                    <span class="planet-label">Aetherion</span>
+                    <div class="planet-ring"></div>
+                    <div class="planet-moon"></div>
+                    <div class="agent-icon" id="agentAetherion" style="display: none;"></div>
+                    <div class="resource-icon-on-planet stardust-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('stardust', 5)" data-tooltip="Stardust"></div>
+                    <div class="resource-icon-on-planet plasma-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('plasma', 3)" data-tooltip="Plasma"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Aetherion')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon storm tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Aetherion')" data-tooltip="Ion Storm"></div>
+                    <div class="enemy-icon" id="enemyAetherion" style="display: none;" onclick="fightEnemy('Aetherion')"></div>
+                    <div class="anomaly-zone" id="anomalyAetherion" onclick="exploreAnomaly('Aetherion')"></div>
+                    <div class="faction-outpost" id="outpostAetherion" onclick="supportOutpost('Aetherion')"></div>
+                </div>
+                <div class="planet vortexia" onclick="moveAgent('Vortexia')">
+                    <span class="planet-label">Vortexia</span>
+                    <div class="planet-ring"></div>
+                    <div class="agent-icon" id="agentVortexia" style="display: none;"></div>
+                    <div class="resource-icon-on-planet plasma-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('plasma', 4)" data-tooltip="Plasma"></div>
+                    <div class="resource-icon-on-planet dark-matter-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('darkMatter', 2)" data-tooltip="Dark Matter"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Vortexia')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon clear tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Vortexia')" data-tooltip="Clear Skies"></div>
+                    <div class="enemy-icon" id="enemyVortexia" style="display: none;" onclick="fightEnemy('Vortexia')"></div>
+                    <div class="anomaly-zone" id="anomalyVortexia" onclick="exploreAnomaly('Vortexia')"></div>
+                    <div class="faction-outpost" id="outpostVortexia" onclick="supportOutpost('Vortexia')"></div>
+                </div>
+                <div class="planet stellaris" onclick="moveAgent('Stellaris')">
+                    <span class="planet-label">Stellaris</span>
+                    <div class="planet-moon"></div>
+                    <div class="agent-icon" id="agentStellaris" style="display: none;"></div>
+                    <div class="resource-icon-on-planet dark-matter-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('darkMatter', 3)" data-tooltip="Dark Matter"></div>
+                    <div class="resource-icon-on-planet quasar-crystals-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('quasarCrystals', 2)" data-tooltip="Quasar Crystals"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Stellaris')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon storm tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Stellaris')" data-tooltip="Meteor Shower"></div>
+                    <div class="enemy-icon" id="enemyStellaris" style="display: none;" onclick="fightEnemy('Stellaris')"></div>
+                    <div class="anomaly-zone" id="anomalyStellaris" onclick="exploreAnomaly('Stellaris')"></div>
+                    <div class="faction-outpost" id="outpostStellaris" onclick="supportOutpost('Stellaris')"></div>
+                </div>
+                <div class="planet nebulon" onclick="moveAgent('Nebulon')">
+                    <span class="planet-label">Nebulon</span>
+                    <div class="planet-ring"></div>
+                    <div class="agent-icon" id="agentNebulon" style="display: none;"></div>
+                    <div class="resource-icon-on-planet quasar-crystals-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('quasarCrystals', 2)" data-tooltip="Quasar Crystals"></div>
+                    <div class="resource-icon-on-planet void-essence-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('voidEssence', 1)" data-tooltip="Void Essence"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Nebulon')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon clear tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Nebulon')" data-tooltip="Clear Skies"></div>
+                    <div class="enemy-icon" id="enemyNebulon" style="display: none;" onclick="fightEnemy('Nebulon')"></div>
+                    <div class="anomaly-zone" id="anomalyNebulon" onclick="exploreAnomaly('Nebulon')"></div>
+                    <div class="faction-outpost" id="outpostNebulon" onclick="supportOutpost('Nebulon')"></div>
+                </div>
+                <div class="planet cryon" onclick="moveAgent('Cryon')">
+                    <span class="planet-label">Cryon</span>
+                    <div class="planet-moon"></div>
+                    <div class="agent-icon" id="agentCryon" style="display: none;"></div>
+                    <div class="resource-icon-on-planet void-essence-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('voidEssence', 1)" data-tooltip="Void Essence"></div>
+                    <div class="resource-icon-on-planet nebula-flux-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('nebulaFlux', 1)" data-tooltip="Nebula Flux"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Cryon')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon storm tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Cryon')" data-tooltip="Cryonic Blizzard"></div>
+                    <div class="enemy-icon" id="enemyCryon" style="display: none;" onclick="fightEnemy('Cryon')"></div>
+                    <div class="anomaly-zone" id="anomalyCryon" onclick="exploreAnomaly('Cryon')"></div>
+                    <div class="faction-outpost" id="outpostCryon" onclick="supportOutpost('Cryon')"></div>
+                </div>
+                <div class="planet umbra" onclick="moveAgent('Umbra')">
+                    <span class="planet-label">Umbra</span>
+                    <div class="planet-ring"></div>
+                    <div class="agent-icon" id="agentUmbra" style="display: none;"></div>
+                    <div class="resource-icon-on-planet nebula-flux-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('nebulaFlux', 1)" data-tooltip="Nebula Flux"></div>
+                    <div class="resource-icon-on-planet stardust-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('stardust', 2)" data-tooltip="Stardust"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Umbra')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon clear tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Umbra')" data-tooltip="Clear Skies"></div>
+                    <div class="enemy-icon" id="enemyUmbra" style="display: none;" onclick="fightEnemy('Umbra')"></div>
+                    <div class="anomaly-zone" id="anomalyUmbra" onclick="exploreAnomaly('Umbra')"></div>
+                    <div class="faction-outpost" id="outpostUmbra" onclick="supportOutpost('Umbra')"></div>
+                </div>
+            </div>
+            <div class="game-controls">
+                <div class="mini-map" id="miniMap">
+                    <div class="mini-planet aetherion" onclick="moveAgent('Aetherion')"></div>
+                    <div class="mini-planet vortexia" onclick="moveAgent('Vortexia')"></div>
+                    <div class="mini-planet stellaris" onclick="moveAgent('Stellaris')"></div>
+                    <div class="mini-planet nebulon" onclick="moveAgent('Nebulon')"></div>
+                    <div class="mini-planet cryon" onclick="moveAgent('Cryon')"></div>
+                    <div class="mini-planet umbra" onclick="moveAgent('Umbra')"></div>
+                </div>
+                <div class="mission-info">
+                    <p class="mission-status" id="missionStatus">Mission: Exploring Aetherion</p>
+                    <p class="event-notification" id="eventNotification"></p>
+                </div>
+                <div class="mission-buttons">
+                    <button class="action-btn primary-btn" onclick="collectResources()">
+                        <i class="fas fa-gem"></i> Collect Resources
+                    </button>
+                    <button class="action-btn" onclick="lootCrate()">
+                        <span class="loot-crate" id="lootCrate"></span> Loot Crate
+                    </button>
+                    <button class="action-btn" onclick="exploreAnomaly()">
+                        <i class="fas fa-bolt"></i> Agent Ability
+                    </button>
+                    <button class="action-btn" onclick="startDailyQuest()">
+                        <i class="fas fa-calendar-day"></i> Daily Quest
+                    </button>
+                    <button class="action-btn" onclick="joinFactionWar()">
+                        <i class="fas fa-flag"></i> Faction War
+                    </button>
+                </div>
+            </div>
+            <div class="activity-log">
+                <h3><i class="fas fa-clipboard-list"></i> Agent Activity</h3>
+                <div id="activityLog">
+                    <p class="log-entry">Nova is exploring Aetherion.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Sections -->
+        <div class="dashboard-grid">
+            <!-- Planetary Stats -->
+            <div class="dashboard-section planetary-stats">
+                <h3><i class="fas fa-globe"></i> Planetary Stats</h3>
+                <div class="dashboard-content">
+                    <p id="selectedPlanet">Selected Planet: Aetherion</p>
+                    <p id="planetResources">Resources: Stardust 10/s</p>
+                    <p id="anomalyActivity">Anomaly Activity: Low</p>
+                    <p>Gravity: 0.9g</p>
+                    <p>Atmosphere: Nitrogen-Oxygen</p>
+                    <div class="stat-bar-container">
+                        <p>Hazard Level:</p>
+                        <div class="hazard-bar">
+                            <div class="hazard-progress" id="hazardProgress" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar-container">
+                        <p>Faction Control:</p>
+                        <div class="faction-bar">
+                            <div class="faction-progress" id="factionProgress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="action-btn" onclick="supportFaction()">
+                            <i class="fas fa-users"></i> Support Faction
+                        </button>
+                        <button class="action-btn" onclick="upgradeAgent()">
+                            <i class="fas fa-arrow-up"></i> Upgrade Agent
+                        </button>
+                        <button class="action-btn" onclick="scanPlanet()">
+                            <i class="fas fa-search"></i> Scan Planet
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="dashboard-section leaderboard">
+                <h3><i class="fas fa-trophy"></i> Leaderboard</h3>
+                <div class="dashboard-content">
+                    <div id="leaderboardEntries">
+                        <p>1. Nova: 1,500 Resources</p>
+                        <p>2. Astra: 1,200 Resources</p>
+                        <p>3. Zenith: 900 Resources</p>
+                    </div>
+                    <p>Faction Rankings:</p>
+                    <div class="faction-rankings">
+                        <p>Explorers: 10,000 Points</p>
+                        <p>Conquerors: 8,500 Points</p>
+                    </div>
+                    <div class="stat-bar-container">
+                        <p>Daily Challenge Progress:</p>
+                        <div class="challenge-bar">
+                            <div class="challenge-progress" id="challengeProgress" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="action-btn" onclick="challengeLeader()">
+                            <i class="fas fa-fist-raised"></i> Challenge Leader
+                        </button>
+                        <button class="action-btn" onclick="refreshLeaderboard()">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missions Dashboard -->
+            <div class="dashboard-section missions">
+                <h3><i class="fas fa-tasks"></i> Active Missions</h3>
+                <div class="dashboard-content">
+                    <div id="missionList">
+                        <div class="mission-item">
+                            <p>Mine 100 Stardust on Aetherion</p>
+                            <div class="progress-bar">
+                                <div class="progress" id="missionProgress1" style="width: 0%;"></div>
+                            </div>
+                            <p class="mission-reward">Reward: 50 $NEBULA</p>
+                        </div>
+                        <div class="mission-item">
+                            <p>Defeat Hostile AI on Vortexia</p>
+                            <div class="progress-bar">
+                                <div class="progress" id="missionProgress2" style="width: 0%;"></div>
+                            </div>
+                            <p class="mission-reward">Reward: 75 $NEBULA</p>
+                        </div>
+                        <div class="mission-item">
+                            <p>Establish Outpost on Umbra</p>
+                            <div class="progress-bar">
+                                <div class="progress" id="missionProgress3" style="width: 0%;"></div>
+                            </div>
+                            <p class="mission-reward">Reward: 100 $NEBULA</p>
+                        </div>
+                    </div>
+                    <div class="mission-filters">
+                        <p>Mission Archive: 5/10 Completed</p>
+                        <p>Difficulty: 
+                            <select id="missionDifficulty" class="custom-select">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="action-btn" onclick="viewMissionArchive()">
+                            <i class="fas fa-archive"></i> View Archive
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faction Overview -->
+            <div class="dashboard-section faction-overview">
+                <h3><i class="fas fa-users"></i> Faction Overview</h3>
+                <div class="dashboard-content">
+                    <div class="faction-info">
+                        <p>Faction: Cosmic Explorers</p>
+                        <p>Members: 150</p>
+                        <p>Controlled Planets: 3/6</p>
+                        <p>Resources Contributed: 2,500</p>
+                        <p>Perk: +10% Resource Gain</p>
+                        <p>Diplomacy: Neutral with Conquerors</p>
+                        <p>Next Faction Event: <span class="countdown">03:00:00</span></p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="action-btn" onclick="joinFaction()">
+                            <i class="fas fa-user-plus"></i> Join Faction
+                        </button>
+                        <button class="action-btn" onclick="donateResources()">
+                            <i class="fas fa-hand-holding-usd"></i> Donate
+                        </button>
+                        <button class="action-btn" onclick="startFactionWar()">
+                            <i class="fas fa-gavel"></i> Start War
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Overview -->
+            <div class="dashboard-section resources-overview">
+                <h3><i class="fas fa-boxes"></i> Resources Overview</h3>
+                <div class="dashboard-content">
+                    <div class="resources-grid">
+                        <div class="resource-item">
+                            <span class="resource-icon stardust-icon"></span>
+                            <span id="stardustCount">Stardust: 0</span>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-icon plasma-icon"></span>
+                            <span id="plasmaCount">Plasma: 0</span>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-icon dark-matter-icon"></span>
+                            <span id="darkMatterCount">Dark Matter: 0</span>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-icon quasar-crystals-icon"></span>
+                            <span id="quasarCrystalsCount">Quasar Crystals: 0</span>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-icon void-essence-icon"></span>
+                            <span id="voidEssenceCount">Void Essence: 0</span>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-icon nebula-flux-icon"></span>
+                            <span id="nebulaFluxCount">Nebula Flux: 0</span>
+                        </div>
+                    </div>
+                    <div class="conversion-controls">
+                        <p>Convert: 
+                            <select id="convertResource" class="custom-select">
+                                <option value="stardust">Stardust</option>
+                                <option value="plasma">Plasma</option>
+                            </select> to $NEBULA
+                        </p>
+                        <p>Market Trend: <span class="market-trend">Stable</span></p>
+                    </div>
+                    <div class="market-status" id="marketStatus">
+                        Market: Stardust +5% | Plasma -2% | Dark Matter +10%
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="action-btn" onclick="convertResources()">
+                            <i class="fas fa-exchange-alt"></i> Convert
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory - Button that opens a modal -->
+            <div class="dashboard-section inventory">
+                <h3><i class="fas fa-briefcase"></i> Inventory</h3>
+                <div class="dashboard-content">
+                    <div class="dashboard-actions center-btn">
+                        <button class="action-btn full-width-btn" onclick="showInventoryModal()">
+                            <i class="fas fa-boxes"></i> Open Inventory
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galactic Events - Button that opens a modal -->
+            <div class="dashboard-section galactic-events">
+                <h3><i class="fas fa-meteor"></i> Galactic Events</h3>
+                <div class="dashboard-content">
+                    <div class="dashboard-actions center-btn">
+                        <button class="action-btn full-width-btn" onclick="showGalacticEventsModal()">
+                            <i class="fas fa-meteor"></i> View Active Events
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Lab - Button that opens a modal -->
+            <div class="dashboard-section research-lab">
+                <h3><i class="fas fa-microscope"></i> Research Lab</h3>
+                <div class="dashboard-content">
+                    <div class="dashboard-actions center-btn">
+                        <button class="action-btn full-width-btn" onclick="showResearchLabModal()">
+                            <i class="fas fa-atom"></i> Access Research Lab
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exploration Logs - Button that opens a modal -->
+            <div class="dashboard-section exploration-logs">
+                <h3><i class="fas fa-book-open"></i> Exploration Logs</h3>
+                <div class="dashboard-content">
+                    <div class="dashboard-actions center-btn">
+                        <button class="action-btn full-width-btn" onclick="showExplorationLogsModal()">
+                            <i class="fas fa-book-open"></i> View Logs
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trading Post - Button that opens a modal -->
+            <div class="dashboard-section trading-post">
+                <h3><i class="fas fa-store"></i> Trading Post</h3>
+                <div class="dashboard-content">
+                    <div class="dashboard-actions center-btn">
+                        <button class="action-btn full-width-btn" onclick="showTradingPostModal()">
+                            <i class="fas fa-store"></i> Enter Trading Post
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global UI Elements -->
+    <div id="modal-container" class="modal-container hidden"></div>
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Custom script -->
+    <script src="js/index.iife.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body></html>
