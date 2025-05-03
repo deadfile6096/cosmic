@@ -1,5 +1,5 @@
 /**
- * Cosmic MCP - AI Gaming Universe
+ * LUNAR MOD - AI Gaming Universe
  * Enhanced script with improved animations and interactions
  */
 
@@ -285,7 +285,7 @@ function initGame() {
     startBackgroundAnimations();
     
     // Show welcome notification
-    showNotification('Welcome to Cosmic MCP!', 'discovery');
+    showNotification('Welcome to LUNAR MOD!', 'discovery');
     
     // Add event listeners for buttons and interactions
     setupEventListeners();
@@ -1050,7 +1050,7 @@ function updateResourceDisplay() {
     
     // Update NEBULA balance
     if (domElements.nebulaBalance) {
-        domElements.nebulaBalance.textContent = `${gameState.resources.nebulaCurrency} $NEBULA`;
+        domElements.nebulaBalance.textContent = `${gameState.resources.nebulaCurrency} $LUNAR`;
     }
 }
 
@@ -1133,10 +1133,10 @@ function updateMissionProgress(missionId, amount = 0) {
             gameState.resources.nebulaCurrency += mission.reward;
             
             // Log completion
-            logActivity(`Mission Completed: ${mission.title}! Earned ${mission.reward} $NEBULA.`);
+            logActivity(`Mission Completed: ${mission.title}! Earned ${mission.reward} $LUNAR.`);
             
             // Show notification
-            showNotification(`🎯 Mission Complete! +${mission.reward} $NEBULA`, 'success');
+            showNotification(`🎯 Mission Complete! +${mission.reward} $LUNAR`, 'success');
             
             // Award experience
             gainExperience(50);
@@ -1200,10 +1200,10 @@ function updateDailyQuestProgress() {
             gameState.resources.nebulaCurrency += 25;
             
             // Log completion
-            logActivity('Daily Quest Completed! Earned 25 $NEBULA!');
+            logActivity('Daily Quest Completed! Earned 25 $LUNAR!');
             
             // Show quest completion notification
-            showNotification('🎯 Daily Quest Complete! +25 $NEBULA', 'success');
+            showNotification('🎯 Daily Quest Complete! +25 $LUNAR', 'success');
             
             // Award experience
             gainExperience(100);
@@ -1525,8 +1525,8 @@ function showTradingPostModal() {
     showModal('Trading Post', `
         <div class="trading-info">
             <p>Trader: Quasar Merchant</p>
-            <p>Offer: 100 Stardust for 50 $NEBULA</p>
-            <p>Rare Item: Nebula Core (200 $NEBULA)</p>
+            <p>Offer: 100 Stardust for 50 $LUNAR</p>
+            <p>Rare Item: Nebula Core (200 $LUNAR)</p>
             <p>Trade Cooldown: <span class="countdown">00:30:00</span></p>
         </div>
         <div class="dashboard-actions">
@@ -1686,8 +1686,8 @@ function exploreAnomaly(planet) {
     if (planet !== gameState.agent.location) return;
     
     if (gameState.resources.nebulaCurrency < 10) {
-        logActivity('Insufficient $NEBULA to explore anomaly (10 required).');
-        showNotification('❌ Insufficient $NEBULA (10 required)', 'error');
+        logActivity('Insufficient $LUNAR to explore anomaly (10 required).');
+        showNotification('❌ Insufficient $LUNAR (10 required)', 'error');
         return;
     }
     
@@ -1746,8 +1746,8 @@ function supportOutpost(planet) {
     if (planet !== gameState.agent.location) return;
     
     if (gameState.resources.nebulaCurrency < 15) {
-        logActivity('Insufficient $NEBULA to support outpost (15 required).');
-        showNotification('❌ Insufficient $NEBULA (15 required)', 'error');
+        logActivity('Insufficient $LUNAR to support outpost (15 required).');
+        showNotification('❌ Insufficient $LUNAR (15 required)', 'error');
         return;
     }
     
@@ -1797,8 +1797,8 @@ function supportOutpost(planet) {
 // Loot crate
 function lootCrate() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $NEBULA to open Loot Crate (50 required).');
-        showNotification('❌ Insufficient $NEBULA (50 required)', 'error');
+        logActivity('Insufficient $LUNAR to open Loot Crate (50 required).');
+        showNotification('❌ Insufficient $LUNAR (50 required)', 'error');
         return;
     }
     
@@ -1862,8 +1862,8 @@ function startDailyQuest() {
 // Join faction war
 function joinFactionWar() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $NEBULA to join faction war (50 required).');
-        showNotification('❌ Insufficient $NEBULA (50 required)', 'error');
+        logActivity('Insufficient $LUNAR to join faction war (50 required).');
+        showNotification('❌ Insufficient $LUNAR (50 required)', 'error');
         return;
     }
     
@@ -1884,8 +1884,8 @@ function joinFactionWar() {
 // Support faction
 function supportFaction() {
     if (gameState.resources.nebulaCurrency < 25) {
-        logActivity('Insufficient $NEBULA to support faction (25 required).');
-        showNotification('❌ Insufficient $NEBULA (25 required)', 'error');
+        logActivity('Insufficient $LUNAR to support faction (25 required).');
+        showNotification('❌ Insufficient $LUNAR (25 required)', 'error');
         return;
     }
     
@@ -1935,8 +1935,8 @@ function upgradeAgent() {
 // Scan planet
 function scanPlanet() {
     if (gameState.resources.nebulaCurrency < 10) {
-        logActivity('Insufficient $NEBULA to scan planet (10 required).');
-        showNotification('❌ Insufficient $NEBULA (10 required)', 'error');
+        logActivity('Insufficient $LUNAR to scan planet (10 required).');
+        showNotification('❌ Insufficient $LUNAR (10 required)', 'error');
         return;
     }
     
@@ -1981,8 +1981,8 @@ function scanPlanet() {
 // Challenge leader
 function challengeLeader() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $NEBULA to challenge leader (50 required).');
-        showNotification('❌ Insufficient $NEBULA (50 required)', 'error');
+        logActivity('Insufficient $LUNAR to challenge leader (50 required).');
+        showNotification('❌ Insufficient $LUNAR (50 required)', 'error');
         return;
     }
     
@@ -1996,8 +1996,8 @@ function challengeLeader() {
     
     if (success) {
         // Challenge successful
-        logActivity('Challenge successful! You defeated the leader and gained 100 $NEBULA!');
-        showNotification('🏆 Challenge Victory! +100 $NEBULA', 'success');
+        logActivity('Challenge successful! You defeated the leader and gained 100 $LUNAR!');
+        showNotification('🏆 Challenge Victory! +100 $LUNAR', 'success');
         
         // Award reward
         gameState.resources.nebulaCurrency += 100;
@@ -2084,7 +2084,7 @@ function donateResources() {
     // Small NEBULA reward
     gameState.resources.nebulaCurrency += 20;
     
-    showNotification('🏳️ Donated 200 Stardust to Faction! +20 $NEBULA', 'success');
+    showNotification('🏳️ Donated 200 Stardust to Faction! +20 $LUNAR', 'success');
     
     // Award experience
     gainExperience(30);
@@ -2099,8 +2099,8 @@ function startFactionWar() {
     }
     
     if (gameState.resources.nebulaCurrency < 100) {
-        logActivity('Insufficient $NEBULA to start faction war (100 required).');
-        showNotification('❌ Insufficient $NEBULA (100 required)', 'error');
+        logActivity('Insufficient $LUNAR to start faction war (100 required).');
+        showNotification('❌ Insufficient $LUNAR (100 required)', 'error');
         return;
     }
     
@@ -2198,8 +2198,8 @@ function upgradeGear() {
 // Prepare for event
 function prepareForEvent() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $NEBULA to prepare for event (50 required).');
-        showNotification('❌ Insufficient $NEBULA (50 required)', 'error');
+        logActivity('Insufficient $LUNAR to prepare for event (50 required).');
+        showNotification('❌ Insufficient $LUNAR (50 required)', 'error');
         return;
     }
     
@@ -2216,8 +2216,8 @@ function prepareForEvent() {
 // Decrypt signal
 function decryptSignal() {
     if (gameState.resources.nebulaCurrency < 25) {
-        logActivity('Insufficient $NEBULA to decrypt signal (25 required).');
-        showNotification('❌ Insufficient $NEBULA (25 required)', 'error');
+        logActivity('Insufficient $LUNAR to decrypt signal (25 required).');
+        showNotification('❌ Insufficient $LUNAR (25 required)', 'error');
         return;
     }
     
@@ -2262,10 +2262,10 @@ function convertResources() {
     gameState.resources[resource] -= 100;
     gameState.resources.nebulaCurrency += nebulaGain;
     
-    logActivity(`Converted 100 ${resource.replace(/([A-Z])/g, ' $1').trim()} to ${nebulaGain} $NEBULA.`);
+    logActivity(`Converted 100 ${resource.replace(/([A-Z])/g, ' $1').trim()} to ${nebulaGain} $LUNAR.`);
     updateResourceDisplay();
     
-    showNotification(`💱 Converted to ${nebulaGain} $NEBULA`, 'success');
+    showNotification(`💱 Converted to ${nebulaGain} $LUNAR`, 'success');
     
     // Award experience
     gainExperience(10);
@@ -2320,19 +2320,19 @@ function viewMissionArchive() {
                 <span class="mission-status">✅ Completed</span>
                 <h4>First Contact</h4>
                 <p>Establish communication with Cosmic Explorers</p>
-                <p class="mission-reward">Reward: 50 $NEBULA</p>
+                <p class="mission-reward">Reward: 50 $LUNAR</p>
             </div>
             <div class="mission-item completed">
                 <span class="mission-status">✅ Completed</span>
                 <h4>Resource Hunt</h4>
                 <p>Collect 200 Stardust from Aetherion</p>
-                <p class="mission-reward">Reward: 75 $NEBULA</p>
+                <p class="mission-reward">Reward: 75 $LUNAR</p>
             </div>
             <div class="mission-item in-progress">
                 <span class="mission-status">⏳ In Progress</span>
                 <h4>Anomaly Investigation</h4>
                 <p>Explore 3 anomalies across different planets</p>
-                <p class="mission-reward">Reward: 100 $NEBULA</p>
+                <p class="mission-reward">Reward: 100 $LUNAR</p>
             </div>
         </div>
     `, [
@@ -2387,10 +2387,10 @@ function tradeResources() {
     gameState.resources.stardust -= 100;
     gameState.resources.nebulaCurrency += 50;
     
-    logActivity('Traded 100 Stardust for 50 $NEBULA.');
+    logActivity('Traded 100 Stardust for 50 $LUNAR.');
     updateResourceDisplay();
     
-    showNotification('💱 Traded for 50 $NEBULA', 'success');
+    showNotification('💱 Traded for 50 $LUNAR', 'success');
     
     // Award experience
     gainExperience(15);
@@ -2399,8 +2399,8 @@ function tradeResources() {
 // Buy rare item
 function buyRareItem() {
     if (gameState.resources.nebulaCurrency < 200) {
-        logActivity('Insufficient $NEBULA to buy rare item (200 required).');
-        showNotification('❌ Insufficient $NEBULA (200 required)', 'error');
+        logActivity('Insufficient $LUNAR to buy rare item (200 required).');
+        showNotification('❌ Insufficient $LUNAR (200 required)', 'error');
         return;
     }
     
@@ -2560,8 +2560,8 @@ async function handleDepositNebula() {
         gameState.resources.nebulaCurrency += depositAmount;
         updateResourceDisplay();
         
-        logActivity(`Deposited ${depositAmount} $NEBULA from Phantom Wallet.`);
-        showNotification(`💰 Deposited ${depositAmount} $NEBULA`, 'success');
+        logActivity(`Deposited ${depositAmount} $LUNAR from Phantom Wallet.`);
+        showNotification(`💰 Deposited ${depositAmount} $LUNAR`, 'success');
     } catch (error) {
         console.error('Deposit error:', error);
         logActivity('Failed to deposit: ' + (error.message || 'Unknown error'));
@@ -2578,8 +2578,8 @@ async function handleWithdrawNebula() {
     }
     
     if (gameState.resources.nebulaCurrency <= 0) {
-        logActivity('Withdraw failed: No $NEBULA tokens available.');
-        showNotification('❌ Insufficient $NEBULA', 'error');
+        logActivity('Withdraw failed: No $LUNAR tokens available.');
+        showNotification('❌ Insufficient $LUNAR', 'error');
         return;
     }
     
@@ -2591,8 +2591,8 @@ async function handleWithdrawNebula() {
         gameState.resources.nebulaCurrency -= withdrawAmount;
         updateResourceDisplay();
         
-        logActivity(`Withdrawn ${withdrawAmount} $NEBULA to Phantom Wallet.`);
-        showNotification(`💸 Withdrawn ${withdrawAmount} $NEBULA`, 'success');
+        logActivity(`Withdrawn ${withdrawAmount} $LUNAR to Phantom Wallet.`);
+        showNotification(`💸 Withdrawn ${withdrawAmount} $LUNAR`, 'success');
     } catch (error) {
         console.error('Withdrawal error:', error);
         logActivity('Failed to withdraw: ' + (error.message || 'Unknown error'));
@@ -2613,8 +2613,8 @@ function handleDepositNebula() {
     gameState.resources.nebulaCurrency += depositAmount;
     updateResourceDisplay();
     
-    logActivity(`Deposited ${depositAmount} $NEBULA from Phantom Wallet.`);
-    showNotification(`💰 Deposited ${depositAmount} $NEBULA`, 'success');
+    logActivity(`Deposited ${depositAmount} $LUNAR from Phantom Wallet.`);
+    showNotification(`💰 Deposited ${depositAmount} $LUNAR`, 'success');
 }
 
 // Handle withdraw NEBULA
@@ -2626,8 +2626,8 @@ function handleWithdrawNebula() {
     }
     
     if (gameState.resources.nebulaCurrency <= 0) {
-        logActivity('Withdraw failed: No $NEBULA tokens available.');
-        showNotification('❌ Insufficient $NEBULA', 'error');
+        logActivity('Withdraw failed: No $LUNAR tokens available.');
+        showNotification('❌ Insufficient $LUNAR', 'error');
         return;
     }
     
@@ -2635,8 +2635,8 @@ function handleWithdrawNebula() {
     gameState.resources.nebulaCurrency -= withdrawAmount;
     updateResourceDisplay();
     
-    logActivity(`Withdrawn ${withdrawAmount} $NEBULA to Phantom Wallet.`);
-    showNotification(`💸 Withdrawn ${withdrawAmount} $NEBULA`, 'success');
+    logActivity(`Withdrawn ${withdrawAmount} $LUNAR to Phantom Wallet.`);
+    showNotification(`💸 Withdrawn ${withdrawAmount} $LUNAR`, 'success');
 }
 
 // Generate random events
