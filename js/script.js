@@ -1,5 +1,5 @@
 /**
- * STELLAR MOD - AI Gaming Universe
+ * COSMO MOD - AI Gaming Universe
  * Enhanced script with improved animations and interactions
  */
 
@@ -285,7 +285,7 @@ function initGame() {
     startBackgroundAnimations();
     
     // Show welcome notification
-    showNotification('Welcome to STELLAR MOD!', 'discovery');
+    showNotification('Welcome to COSMO MOD!', 'discovery');
     
     // Add event listeners for buttons and interactions
     setupEventListeners();
@@ -1050,7 +1050,7 @@ function updateResourceDisplay() {
     
     // Update NEBULA balance
     if (domElements.nebulaBalance) {
-        domElements.nebulaBalance.textContent = `${gameState.resources.nebulaCurrency} $STELLAR`;
+        domElements.nebulaBalance.textContent = `${gameState.resources.nebulaCurrency} $COSMO`;
     }
 }
 
@@ -1133,10 +1133,10 @@ function updateMissionProgress(missionId, amount = 0) {
             gameState.resources.nebulaCurrency += mission.reward;
             
             // Log completion
-            logActivity(`Mission Completed: ${mission.title}! Earned ${mission.reward} $STELLAR.`);
+            logActivity(`Mission Completed: ${mission.title}! Earned ${mission.reward} $COSMO.`);
             
             // Show notification
-            showNotification(`🎯 Mission Complete! +${mission.reward} $STELLAR`, 'success');
+            showNotification(`🎯 Mission Complete! +${mission.reward} $COSMO`, 'success');
             
             // Award experience
             gainExperience(50);
@@ -1200,10 +1200,10 @@ function updateDailyQuestProgress() {
             gameState.resources.nebulaCurrency += 25;
             
             // Log completion
-            logActivity('Daily Quest Completed! Earned 25 $STELLAR!');
+            logActivity('Daily Quest Completed! Earned 25 $COSMO!');
             
             // Show quest completion notification
-            showNotification('🎯 Daily Quest Complete! +25 $STELLAR', 'success');
+            showNotification('🎯 Daily Quest Complete! +25 $COSMO', 'success');
             
             // Award experience
             gainExperience(100);
@@ -1525,8 +1525,8 @@ function showTradingPostModal() {
     showModal('Trading Post', `
         <div class="trading-info">
             <p>Trader: Quasar Merchant</p>
-            <p>Offer: 100 Stardust for 50 $STELLAR</p>
-            <p>Rare Item: Nebula Core (200 $STELLAR)</p>
+            <p>Offer: 100 Stardust for 50 $COSMO</p>
+            <p>Rare Item: Nebula Core (200 $COSMO)</p>
             <p>Trade Cooldown: <span class="countdown">00:30:00</span></p>
         </div>
         <div class="dashboard-actions">
@@ -1686,8 +1686,8 @@ function exploreAnomaly(planet) {
     if (planet !== gameState.agent.location) return;
     
     if (gameState.resources.nebulaCurrency < 10) {
-        logActivity('Insufficient $STELLAR to explore anomaly (10 required).');
-        showNotification('❌ Insufficient $STELLAR (10 required)', 'error');
+        logActivity('Insufficient $COSMO to explore anomaly (10 required).');
+        showNotification('❌ Insufficient $COSMO (10 required)', 'error');
         return;
     }
     
@@ -1746,8 +1746,8 @@ function supportOutpost(planet) {
     if (planet !== gameState.agent.location) return;
     
     if (gameState.resources.nebulaCurrency < 15) {
-        logActivity('Insufficient $STELLAR to support outpost (15 required).');
-        showNotification('❌ Insufficient $STELLAR (15 required)', 'error');
+        logActivity('Insufficient $COSMO to support outpost (15 required).');
+        showNotification('❌ Insufficient $COSMO (15 required)', 'error');
         return;
     }
     
@@ -1797,8 +1797,8 @@ function supportOutpost(planet) {
 // Loot crate
 function lootCrate() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $STELLAR to open Loot Crate (50 required).');
-        showNotification('❌ Insufficient $STELLAR (50 required)', 'error');
+        logActivity('Insufficient $COSMO to open Loot Crate (50 required).');
+        showNotification('❌ Insufficient $COSMO (50 required)', 'error');
         return;
     }
     
@@ -1862,8 +1862,8 @@ function startDailyQuest() {
 // Join faction war
 function joinFactionWar() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $STELLAR to join faction war (50 required).');
-        showNotification('❌ Insufficient $STELLAR (50 required)', 'error');
+        logActivity('Insufficient $COSMO to join faction war (50 required).');
+        showNotification('❌ Insufficient $COSMO (50 required)', 'error');
         return;
     }
     
@@ -1884,8 +1884,8 @@ function joinFactionWar() {
 // Support faction
 function supportFaction() {
     if (gameState.resources.nebulaCurrency < 25) {
-        logActivity('Insufficient $STELLAR to support faction (25 required).');
-        showNotification('❌ Insufficient $STELLAR (25 required)', 'error');
+        logActivity('Insufficient $COSMO to support faction (25 required).');
+        showNotification('❌ Insufficient $COSMO (25 required)', 'error');
         return;
     }
     
@@ -1935,8 +1935,8 @@ function upgradeAgent() {
 // Scan planet
 function scanPlanet() {
     if (gameState.resources.nebulaCurrency < 10) {
-        logActivity('Insufficient $STELLAR to scan planet (10 required).');
-        showNotification('❌ Insufficient $STELLAR (10 required)', 'error');
+        logActivity('Insufficient $COSMO to scan planet (10 required).');
+        showNotification('❌ Insufficient $COSMO (10 required)', 'error');
         return;
     }
     
@@ -1981,8 +1981,8 @@ function scanPlanet() {
 // Challenge leader
 function challengeLeader() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $STELLAR to challenge leader (50 required).');
-        showNotification('❌ Insufficient $STELLAR (50 required)', 'error');
+        logActivity('Insufficient $COSMO to challenge leader (50 required).');
+        showNotification('❌ Insufficient $COSMO (50 required)', 'error');
         return;
     }
     
@@ -1996,8 +1996,8 @@ function challengeLeader() {
     
     if (success) {
         // Challenge successful
-        logActivity('Challenge successful! You defeated the leader and gained 100 $STELLAR!');
-        showNotification('🏆 Challenge Victory! +100 $STELLAR', 'success');
+        logActivity('Challenge successful! You defeated the leader and gained 100 $COSMO!');
+        showNotification('🏆 Challenge Victory! +100 $COSMO', 'success');
         
         // Award reward
         gameState.resources.nebulaCurrency += 100;
@@ -2084,7 +2084,7 @@ function donateResources() {
     // Small NEBULA reward
     gameState.resources.nebulaCurrency += 20;
     
-    showNotification('🏳️ Donated 200 Stardust to Faction! +20 $STELLAR', 'success');
+    showNotification('🏳️ Donated 200 Stardust to Faction! +20 $COSMO', 'success');
     
     // Award experience
     gainExperience(30);
@@ -2099,8 +2099,8 @@ function startFactionWar() {
     }
     
     if (gameState.resources.nebulaCurrency < 100) {
-        logActivity('Insufficient $STELLAR to start faction war (100 required).');
-        showNotification('❌ Insufficient $STELLAR (100 required)', 'error');
+        logActivity('Insufficient $COSMO to start faction war (100 required).');
+        showNotification('❌ Insufficient $COSMO (100 required)', 'error');
         return;
     }
     
@@ -2198,8 +2198,8 @@ function upgradeGear() {
 // Prepare for event
 function prepareForEvent() {
     if (gameState.resources.nebulaCurrency < 50) {
-        logActivity('Insufficient $STELLAR to prepare for event (50 required).');
-        showNotification('❌ Insufficient $STELLAR (50 required)', 'error');
+        logActivity('Insufficient $COSMO to prepare for event (50 required).');
+        showNotification('❌ Insufficient $COSMO (50 required)', 'error');
         return;
     }
     
@@ -2216,8 +2216,8 @@ function prepareForEvent() {
 // Decrypt signal
 function decryptSignal() {
     if (gameState.resources.nebulaCurrency < 25) {
-        logActivity('Insufficient $STELLAR to decrypt signal (25 required).');
-        showNotification('❌ Insufficient $STELLAR (25 required)', 'error');
+        logActivity('Insufficient $COSMO to decrypt signal (25 required).');
+        showNotification('❌ Insufficient $COSMO (25 required)', 'error');
         return;
     }
     
@@ -2262,10 +2262,10 @@ function convertResources() {
     gameState.resources[resource] -= 100;
     gameState.resources.nebulaCurrency += nebulaGain;
     
-    logActivity(`Converted 100 ${resource.replace(/([A-Z])/g, ' $1').trim()} to ${nebulaGain} $STELLAR.`);
+    logActivity(`Converted 100 ${resource.replace(/([A-Z])/g, ' $1').trim()} to ${nebulaGain} $COSMO.`);
     updateResourceDisplay();
     
-    showNotification(`💱 Converted to ${nebulaGain} $STELLAR`, 'success');
+    showNotification(`💱 Converted to ${nebulaGain} $COSMO`, 'success');
     
     // Award experience
     gainExperience(10);
@@ -2320,19 +2320,19 @@ function viewMissionArchive() {
                 <span class="mission-status">✅ Completed</span>
                 <h4>First Contact</h4>
                 <p>Establish communication with Cosmic Explorers</p>
-                <p class="mission-reward">Reward: 50 $STELLAR</p>
+                <p class="mission-reward">Reward: 50 $COSMO</p>
             </div>
             <div class="mission-item completed">
                 <span class="mission-status">✅ Completed</span>
                 <h4>Resource Hunt</h4>
                 <p>Collect 200 Stardust from Aetherion</p>
-                <p class="mission-reward">Reward: 75 $STELLAR</p>
+                <p class="mission-reward">Reward: 75 $COSMO</p>
             </div>
             <div class="mission-item in-progress">
                 <span class="mission-status">⏳ In Progress</span>
                 <h4>Anomaly Investigation</h4>
                 <p>Explore 3 anomalies across different planets</p>
-                <p class="mission-reward">Reward: 100 $STELLAR</p>
+                <p class="mission-reward">Reward: 100 $COSMO</p>
             </div>
         </div>
     `, [
@@ -2387,10 +2387,10 @@ function tradeResources() {
     gameState.resources.stardust -= 100;
     gameState.resources.nebulaCurrency += 50;
     
-    logActivity('Traded 100 Stardust for 50 $STELLAR.');
+    logActivity('Traded 100 Stardust for 50 $COSMO.');
     updateResourceDisplay();
     
-    showNotification('💱 Traded for 50 $STELLAR', 'success');
+    showNotification('💱 Traded for 50 $COSMO', 'success');
     
     // Award experience
     gainExperience(15);
@@ -2399,8 +2399,8 @@ function tradeResources() {
 // Buy rare item
 function buyRareItem() {
     if (gameState.resources.nebulaCurrency < 200) {
-        logActivity('Insufficient $STELLAR to buy rare item (200 required).');
-        showNotification('❌ Insufficient $STELLAR (200 required)', 'error');
+        logActivity('Insufficient $COSMO to buy rare item (200 required).');
+        showNotification('❌ Insufficient $COSMO (200 required)', 'error');
         return;
     }
     
@@ -2560,8 +2560,8 @@ async function handleDepositNebula() {
         gameState.resources.nebulaCurrency += depositAmount;
         updateResourceDisplay();
         
-        logActivity(`Deposited ${depositAmount} $STELLAR from Phantom Wallet.`);
-        showNotification(`💰 Deposited ${depositAmount} $STELLAR`, 'success');
+        logActivity(`Deposited ${depositAmount} $COSMO from Phantom Wallet.`);
+        showNotification(`💰 Deposited ${depositAmount} $COSMO`, 'success');
     } catch (error) {
         console.error('Deposit error:', error);
         logActivity('Failed to deposit: ' + (error.message || 'Unknown error'));
@@ -2578,8 +2578,8 @@ async function handleWithdrawNebula() {
     }
     
     if (gameState.resources.nebulaCurrency <= 0) {
-        logActivity('Withdraw failed: No $STELLAR tokens available.');
-        showNotification('❌ Insufficient $STELLAR', 'error');
+        logActivity('Withdraw failed: No $COSMO tokens available.');
+        showNotification('❌ Insufficient $COSMO', 'error');
         return;
     }
     
@@ -2591,8 +2591,8 @@ async function handleWithdrawNebula() {
         gameState.resources.nebulaCurrency -= withdrawAmount;
         updateResourceDisplay();
         
-        logActivity(`Withdrawn ${withdrawAmount} $STELLAR to Phantom Wallet.`);
-        showNotification(`💸 Withdrawn ${withdrawAmount} $STELLAR`, 'success');
+        logActivity(`Withdrawn ${withdrawAmount} $COSMO to Phantom Wallet.`);
+        showNotification(`💸 Withdrawn ${withdrawAmount} $COSMO`, 'success');
     } catch (error) {
         console.error('Withdrawal error:', error);
         logActivity('Failed to withdraw: ' + (error.message || 'Unknown error'));
@@ -2613,8 +2613,8 @@ function handleDepositNebula() {
     gameState.resources.nebulaCurrency += depositAmount;
     updateResourceDisplay();
     
-    logActivity(`Deposited ${depositAmount} $STELLAR from Phantom Wallet.`);
-    showNotification(`💰 Deposited ${depositAmount} $STELLAR`, 'success');
+    logActivity(`Deposited ${depositAmount} $COSMO from Phantom Wallet.`);
+    showNotification(`💰 Deposited ${depositAmount} $COSMO`, 'success');
 }
 
 // Handle withdraw NEBULA
@@ -2626,8 +2626,8 @@ function handleWithdrawNebula() {
     }
     
     if (gameState.resources.nebulaCurrency <= 0) {
-        logActivity('Withdraw failed: No $STELLAR tokens available.');
-        showNotification('❌ Insufficient $STELLAR', 'error');
+        logActivity('Withdraw failed: No $COSMO tokens available.');
+        showNotification('❌ Insufficient $COSMO', 'error');
         return;
     }
     
@@ -2635,8 +2635,8 @@ function handleWithdrawNebula() {
     gameState.resources.nebulaCurrency -= withdrawAmount;
     updateResourceDisplay();
     
-    logActivity(`Withdrawn ${withdrawAmount} $STELLAR to Phantom Wallet.`);
-    showNotification(`💸 Withdrawn ${withdrawAmount} $STELLAR`, 'success');
+    logActivity(`Withdrawn ${withdrawAmount} $COSMO to Phantom Wallet.`);
+    showNotification(`💸 Withdrawn ${withdrawAmount} $COSMO`, 'success');
 }
 
 // Generate random events
