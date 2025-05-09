@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="netlify" content="spa">
-    <title>STELLAR MOD - AI Gaming Universe</title>
+    <title>COSMO TEC - AI Gaming Universe</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/cosmictranspe.png">
     <!-- Tailwind CSS CDN -->
@@ -27,8 +27,8 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="images/cosmictranspe.png" alt="STELLAR MOD Logo" class="logo-img">
-            <span class="logo-text">STELLAR MOD</span>
+            <img src="images/cosmictranspe.png" alt="COSMO TEC Logo" class="logo-img">
+            <span class="logo-text">COSMO TEC</span>
         </div>
         <div class="nav-links">
             <a href="#" class="nav-btn tooltip" data-tooltip="Game Dashboard">
@@ -42,7 +42,7 @@
             <a href="https://t.me/cosmicmcp" target="_blank" class="social-btn tooltip" data-tooltip="Join our Telegram">
                 <i class="fab fa-telegram-plane"></i>
             </a>
-            <a href="https://x.com/stellarmod_sol" target="_blank" class="social-btn tooltip" data-tooltip="Follow us on X">
+            <a href="https://x.com/COSMOmod_sol" target="_blank" class="social-btn tooltip" data-tooltip="Follow us on X">
                 <i class="fab fa-twitter"></i>
             </a>
             <a href="https://github.com/CosmicMCPv1/CosmicMCP" target="_blank" class="social-btn tooltip" data-tooltip="Check our GitHub">
@@ -50,7 +50,7 @@
             </a>
         </div>
         <div class="wallet-section">
-            <div class="nebula-balance" id="nebulaBalance">0 $STELLAR</div>
+            <div class="nebula-balance" id="nebulaBalance">0 $COSMO</div>
             <button id="depositNebula" class="wallet-btn text-white font-semibold">
                 <i class="fas fa-plus-circle"></i> Deposit
             </button>
@@ -96,17 +96,17 @@
                     <div class="anomaly-zone" id="anomalyVortexia" onclick="exploreAnomaly('Vortexia')"></div>
                     <div class="faction-outpost" id="outpostVortexia" onclick="supportOutpost('Vortexia')"></div>
                 </div>
-                <div class="planet stellaris" onclick="moveAgent('Stellaris')">
-                    <span class="planet-label">Stellaris</span>
+                <div class="planet COSMOis" onclick="moveAgent('COSMOis')">
+                    <span class="planet-label">COSMOis</span>
                     <div class="planet-moon"></div>
-                    <div class="agent-icon" id="agentStellaris" style="display: none;"></div>
+                    <div class="agent-icon" id="agentCOSMOis" style="display: none;"></div>
                     <div class="resource-icon-on-planet dark-matter-icon tooltip" style="top: 20%; left: 20%;" onclick="collectResource('darkMatter', 3)" data-tooltip="Dark Matter"></div>
                     <div class="resource-icon-on-planet quasar-crystals-icon tooltip" style="top: 70%; left: 30%;" onclick="collectResource('quasarCrystals', 2)" data-tooltip="Quasar Crystals"></div>
-                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('Stellaris')" data-tooltip="Cosmic Relic"></div>
-                    <div class="weather-icon storm tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('Stellaris')" data-tooltip="Meteor Shower"></div>
-                    <div class="enemy-icon" id="enemyStellaris" style="display: none;" onclick="fightEnemy('Stellaris')"></div>
-                    <div class="anomaly-zone" id="anomalyStellaris" onclick="exploreAnomaly('Stellaris')"></div>
-                    <div class="faction-outpost" id="outpostStellaris" onclick="supportOutpost('Stellaris')"></div>
+                    <div class="relic-icon tooltip" style="top: 50%; left: 80%;" onclick="discoverRelic('COSMOis')" data-tooltip="Cosmic Relic"></div>
+                    <div class="weather-icon storm tooltip" style="top: 30%; left: 50%;" onclick="checkWeather('COSMOis')" data-tooltip="Meteor Shower"></div>
+                    <div class="enemy-icon" id="enemyCOSMOis" style="display: none;" onclick="fightEnemy('COSMOis')"></div>
+                    <div class="anomaly-zone" id="anomalyCOSMOis" onclick="exploreAnomaly('COSMOis')"></div>
+                    <div class="faction-outpost" id="outpostCOSMOis" onclick="supportOutpost('COSMOis')"></div>
                 </div>
                 <div class="planet nebulon" onclick="moveAgent('Nebulon')">
                     <span class="planet-label">Nebulon</span>
@@ -149,7 +149,7 @@
                 <div class="mini-map" id="miniMap">
                     <div class="mini-planet aetherion" onclick="moveAgent('Aetherion')"></div>
                     <div class="mini-planet vortexia" onclick="moveAgent('Vortexia')"></div>
-                    <div class="mini-planet stellaris" onclick="moveAgent('Stellaris')"></div>
+                    <div class="mini-planet COSMOis" onclick="moveAgent('COSMOis')"></div>
                     <div class="mini-planet nebulon" onclick="moveAgent('Nebulon')"></div>
                     <div class="mini-planet cryon" onclick="moveAgent('Cryon')"></div>
                     <div class="mini-planet umbra" onclick="moveAgent('Umbra')"></div>
@@ -262,21 +262,21 @@
                             <div class="progress-bar">
                                 <div class="progress" id="missionProgress1" style="width: 0%;"></div>
                             </div>
-                            <p class="mission-reward">Reward: 50 $STELLAR</p>
+                            <p class="mission-reward">Reward: 50 $COSMO</p>
                         </div>
                         <div class="mission-item">
                             <p>Defeat Hostile AI on Vortexia</p>
                             <div class="progress-bar">
                                 <div class="progress" id="missionProgress2" style="width: 0%;"></div>
                             </div>
-                            <p class="mission-reward">Reward: 75 $STELLAR</p>
+                            <p class="mission-reward">Reward: 75 $COSMO</p>
                         </div>
                         <div class="mission-item">
                             <p>Establish Outpost on Umbra</p>
                             <div class="progress-bar">
                                 <div class="progress" id="missionProgress3" style="width: 0%;"></div>
                             </div>
-                            <p class="mission-reward">Reward: 100 $STELLAR</p>
+                            <p class="mission-reward">Reward: 100 $COSMO</p>
                         </div>
                     </div>
                     <div class="mission-filters">
@@ -359,7 +359,7 @@
                             <select id="convertResource" class="custom-select">
                                 <option value="stardust">Stardust</option>
                                 <option value="plasma">Plasma</option>
-                            </select> to $STELLAR
+                            </select> to $COSMO
                         </p>
                         <p>Market Trend: <span class="market-trend">Stable</span></p>
                     </div>
