@@ -1,5 +1,5 @@
 /**
- * COSMO MOD - AI Gaming Universe
+ * ASTRO MOD - AI Gaming Universe
  * Enhanced script with improved animations and interactions
  */
 
@@ -285,7 +285,7 @@ function initGame() {
     startBackgroundAnimations();
     
     // Show welcome notification
-    showNotification('Welcome to COSMO MOD!', 'discovery');
+    showNotification('Welcome to ASTRO MOD!', 'discovery');
     
     // Add event listeners for buttons and interactions
     setupEventListeners();
